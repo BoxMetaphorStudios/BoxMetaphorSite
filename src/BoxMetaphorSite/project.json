@@ -21,7 +21,9 @@
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
     "BundlerMinifier.Core": "2.2.281",
-    "Newtonsoft.Json": "9.0.1"
+    "Newtonsoft.Json": "9.0.1",
+    "Node.js": "5.3.0",
+    "Node.js.redist": "4.4.3"
   },
 
   "tools": {
@@ -60,7 +62,8 @@
   },
 
   "scripts": {
-    "prepublish": [ "bower install", "dotnet bundle" ],
+    "prepublish": [ "bower install", "dotnet bundle", "gulp clean", "gulp compile", "gulp min" ],
     "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
 }
+  
