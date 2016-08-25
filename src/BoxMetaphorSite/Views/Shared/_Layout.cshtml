@@ -6,55 +6,86 @@
     <title>@ViewData["Title"] - BoxMetaphorSite</title>
 
     <environment names="Development">
-        <link rel="stylesheet" href="~/css/app.css" />
+        @*<link href="~/css/app.css" rel="stylesheet" />*@
+        <link rel="stylesheet" href="~/lib/foundation-sites/dist/foundation.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="~/css/app.min.css" asp-append-version="true" />
+        @*<link href="~/css/app.min.css" asp-append-version="true" rel="stylesheet" />*@
+        <link href="~/lib/foundation-sites/dist/foundation.min.css" rel="stylesheet" />
     </environment>
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">BoxMetaphorSite</a>
+    <div class="off-canvas-wrapper">
+        <div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>
+
+            <!-- off-canvas title bar for 'small' screen -->
+            <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+                <div class="title-bar-left">
+                    <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+                    <span class="title-bar-title"><a asp-area="" asp-controller="Home" asp-action="Index">Box Metaphor Studios</a></span>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+
+            <!-- off-canvas left menu -->
+            <div class="off-canvas position-left" id="offCanvasLeft" data-off-canvas>
+                <ul class="vertical dropdown menu" data-dropdown-menu>
+                    <li><a href="#">Foundation</a></li>
+                    <li><a href="#">Dot</a></li>
+                    <li><a href="#">ZURB</a></li>
+                    <li><a href="#">Com</a></li>
+                    <li><a href="#">Slash</a></li>
+                    <li><a href="#">Sites</a></li>
                 </ul>
+            </div>
+            <!-- "wider" top-bar menu for 'medium' and up -->
+            <div id="widemenu" class="top-bar">
+                <div class="top-bar-left">
+                    <ul class="dropdown menu" data-dropdown-menu>
+                        <li class="menu-text">Box Metaphor Studios</li>
+                        <li class="has-submenu">
+                            <a href="#">Item 1</a>
+                            <ul class="menu submenu vertical" data-submenu>
+                                <li><a href="#">Left wide 1</a></li>
+                                <li><a href="#">Left wide 2</a></li>
+                                <li><a href="#">Left wide 3</a></li>
+                            </ul>
+                        </li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+                        <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- original content goes in this container -->
+            <div class="off-canvas-content" data-off-canvas-content>
+                <div class="row">
+                    @RenderBody()
+                    <hr />
+                    <footer>
+                        <p>&copy; 2016 - BoxMetaphorSite</p>
+                    </footer>
+                </div>
+                <environment names="Development">
+                    <script src="~/lib/jquery/dist/jquery.js"></script>
+                    <script src="~/lib/foundation-sites/dist/foundation.js"></script>
+                    <script src="~/js/site.js" asp-append-version="true"></script>
+
+                </environment>
+                <environment names="Staging,Production">
+                    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
+                            asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
+                            asp-fallback-test="window.jQuery">
+                    </script>
+                    <script src="~/lib/foundation-sites/dist/foundation.min.js"></script>
+                    <script src="~/js/site.min.js" asp-append-version="true"></script>
+                </environment>
+                <script>
+                    $(document).foundation();
+                </script>
+                @RenderSection("scripts", required: false)
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; 2016 - BoxMetaphorSite</p>
-        </footer>
-    </div>
-
-    <environment names="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/foundation-sites/dist/foundation.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment names="Staging,Production">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-2.2.0.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery">
-        </script>
-        <script src="~/lib/foundation-sites/dist/foundation.js"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-    @RenderSection("scripts", required: false)
 </body>
 </html>
