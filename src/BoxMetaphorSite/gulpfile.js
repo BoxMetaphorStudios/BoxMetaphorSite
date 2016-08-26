@@ -20,10 +20,10 @@ paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 // where to find sass code
-paths.sassSource = "./Scss/*.scss";
+paths.sassSource = paths.webroot + "lib/foundation-sites/scss/foundation.scss";
 
 // where to output compiled CSS code
-paths.cssOutput = paths.webroot + "css";
+paths.cssOutput = paths.webroot + "/css";
 
 // where to find bower resources
 paths.bower_components = paths.webroot + "lib/";
@@ -55,12 +55,18 @@ gulp.task("min:css", function () {
 gulp.task("min", ["min:js", "min:css"]);
 
 gulp.task("sass", function () {
-    gulp.src(paths.sassSource)
+    return gulp.src(paths.sassSource)
         .pipe(sass({
             includePaths: [
                 paths.bower_components + "foundation-sites/scss",
                 paths.bower_components + "motion-ui/src"
             ]
         }).on("error", sass.logError))
-        .pipe(gulp.dest(paths.cssOutput));
+        .pipe(gulp.dest(paths.webroot + "/css"));
+});
+
+gulp.task("sass2", function () {
+    return gulp.src("Styles/main2.scss")
+      .pipe(sass())
+      .pipe(gulp.dest(paths.webroot + "/css"));
 });
