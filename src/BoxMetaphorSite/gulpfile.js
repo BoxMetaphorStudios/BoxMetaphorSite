@@ -9,7 +9,7 @@ var gulp = require("gulp"),
 var project = require("./project.json");
 
 var paths = {
-    webroot: "./wwwroot/"
+    webroot: "wwwroot/"
 };
 
 paths.js = paths.webroot + "js/**/*.js";
@@ -21,6 +21,7 @@ paths.concatCssDest = paths.webroot + "css/site.min.css";
 
 // where to find sass code
 paths.sassSource = paths.webroot + "lib/foundation-sites/scss/foundation.scss";
+paths.stylesheetSassSource = paths.webroot + "lib/foundation-sites/scss/StyleSheet.scss";
 
 // where to output compiled CSS code
 paths.cssOutput = paths.webroot + "/css";
@@ -56,17 +57,23 @@ gulp.task("min", ["min:js", "min:css"]);
 
 gulp.task("sass", function () {
     return gulp.src(paths.sassSource)
-        .pipe(sass({
-            includePaths: [
-                paths.bower_components + "foundation-sites/scss",
-                paths.bower_components + "motion-ui/src"
-            ]
-        }).on("error", sass.logError))
+        .pipe(sass(//{
+           // includePaths: [
+           //     paths.bower_components + "foundation-sites/scss",
+           //     paths.bower_components + "motion-ui/src"
+           // ]
+        ).on("error", sass.logError))
         .pipe(gulp.dest(paths.webroot + "/css"));
 });
 
 gulp.task("sass2", function () {
     return gulp.src("Styles/main2.scss")
+      .pipe(sass())
+      .pipe(gulp.dest(paths.webroot + "/css"));
+});
+
+gulp.task("sass3", function () {
+    return gulp.src(paths.stylesheetSassSource)
       .pipe(sass())
       .pipe(gulp.dest(paths.webroot + "/css"));
 });

@@ -1,4 +1,5 @@
-﻿$base: #CC0000;
-body {
-  background-color: $base;
-}
+﻿
+@import '../wwwroot/lib/foundation-sites/scss/settings';
+@import '../wwwroot/lib/foundation-sites/scss/foundation';
+
+@include foundation-everything(true);
