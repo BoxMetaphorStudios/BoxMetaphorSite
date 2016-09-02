@@ -1,0 +1,18 @@
+﻿<!-- off-canvas title bar for 'small' screen -->
+<nav>
+    <div class="title-bar" data-responsive-toggle="widemenu" data-hide-for="medium">
+        <div class="title-bar-left">
+            <button class="menu-icon" type="button" data-open="offCanvasLeft"></button>
+            <span class="title-bar-title"><a asp-area="" asp-controller="Home" asp-action="Index">Box Metaphor Studios</a></span>
+        </div>
+    </div>
+
+    <!-- off-canvas left menu -->
+    <div class="off-canvas position-left off-canvas-content" id="offCanvasLeft" data-off-canvas>
+        <ul class="vertical dropdown menu" data-dropdown-menu>
+            <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
+            <li><a asp-area="" asp-controller="Home" asp-action="StyleTesting">Style Testing</a></li>
+        </ul>
+    </div>
+</nav>

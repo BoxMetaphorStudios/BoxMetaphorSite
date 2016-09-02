@@ -361,6 +361,9 @@ td,
 th {
   padding: 0; }
 
+footer {
+  text-align: center; }
+
 .foundation-mq {
   font-family: "small=0em&medium=40em&large=64em&xlarge=75em&xxlarge=90em"; }
 

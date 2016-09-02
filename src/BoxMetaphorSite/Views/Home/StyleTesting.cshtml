@@ -1,0 +1,167 @@
+﻿@{
+    ViewData["Title"] = "Contact";
+}
+<article class="column">
+    <div class="row">
+        <header>
+            <h2>@ViewData["Title"]</h2>
+            <h3>@ViewData["Message"]</h3>
+        </header>
+
+        <address>
+            One Microsoft Way<br />
+            Redmond, WA 98052-6399<br />
+            <abbr title="Phone">P:</abbr>
+            425.555.0100
+        </address>
+
+        <address>
+            <strong>Support:</strong> <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+        <div class="row">
+            <div class="small-8 columns" style="border: 5px solid #FF0000">
+                Parent Column l
+                <div class="row">
+                    <div class="small-8 columns" style="border: 5px solid #7CFC00;">
+                        Nested 1
+                        <div class="row">
+                            <div class="small-6 columns" style="border: 5px solid #0000CD;">Sub Child 1</div>
+                            <div class="small-6 columns" style="border: 5px solid #FF00FF;">Sub Child 2</div>
+                        </div>
+                    </div>
+                    <div class="small-4 columns" style="border: 5px solid #000000;">Nested 2</div>
+                </div>
+            </div>
+            <div class="small-4 columns" style="border: 5px solid #228B22;"> Parent Column 2</div>
+        </div>
+        <h1 class="small-2 small-centered columns" style="border: 5px solid #228B22;">Foundation </h1>
+        <div class="row">
+            <div class="small-2 columns" style="border: 5px solid #FF0000"> Typical </div>
+            <div class="small-4 small-offset-6 columns" style="border: 5px solid #FF00FF"> Offset example </div>
+        </div>
+        <div class="row small-up-3 medium-up-4 large-up-5">
+            <div class="column">
+                <img src="http://lorempixel.com/400/200/" alt="Animal">
+            </div>
+            <div class="column">
+                <img src="http://lorempixel.com/400/200/" alt="Nature">
+            </div>
+            <div class="column">
+                <img src="http://lorempixel.com/400/200/" alt="Train">
+            </div>
+            <div class="column">
+                <img src="http://lorempixel.com/400/200/" alt="City">
+            </div>
+            <div class="column">
+                <img src="http://lorempixel.com/400/200/" alt="Ear Phones">
+            </div>
+        </div>
+        <p class="show-for-small-only">
+            <strong> Web Design</strong>
+        </p>
+        <p class="show-for-medium-only">
+            <strong> Servers </strong>
+        </p>
+        <p class="show-for-large">
+            <strong> Networks </strong>
+        </p>
+
+        <div class="small-10 columns">
+            <div class="callout primary clearfix">
+                <a class="alert button float-left">Warning</a>
+                <a class="success button float-right">Eureka</a>
+            </div>
+        </div>
+
+        <div class="callout">
+            <p class="large-text-right">Cat ipsum dolor sit amet, tempora and error explicabo. Aliqua quia ipsam yet rem.</p>
+            <p class="large-text-center">Cat ipsum dolor sit amet, tempora and error explicabo. Aliqua quia ipsam yet rem.</p>
+            <p class="large-text-justify">Cat ipsum dolor sit amet, tempora and error explicabo. Aliqua quia ipsam yet rem.</p>
+        </div>
+
+        <div>
+            <blockquote>
+                Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                <cite> Anonymous </cite>
+            </blockquote>
+        </div>
+        <hr><br>
+        <p>
+            The United States is often called <abbr title="United States of America">U.S.A</abbr>
+        </p>
+
+        <ul class="menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Inbox</a></li>
+            <li><a href="#">Notifications</a></li>
+        </ul>
+        <ul class="menu expanded">
+            <li style="border: 5px solid #FF0000;"><a href="#">Home</a></li>
+            <li style="border: 5px solid #7CFC00;"><a href="#">Profile</a></li>
+        </ul>
+        <ul class="menu expanded">
+            <li style="border: 5px solid #FF0000;"><a href="#">Home</a></li>
+            <li style="border: 5px solid #7CFC00;"><a href="#">Profile</a></li>
+            <li style="border: 5px solid #000000;"><a href="#">Inbox</a></li>
+        </ul>
+        <ul class="menu expanded">
+            <li style="border: 5px solid #FF0000;"><a href="#">Home</a></li>
+            <li style="border: 5px solid #7CFC00;"><a href="#">Profile</a></li>
+            <li style="border: 5px solid #000000;"><a href="#">Inbox</a></li>
+            <li style="border: 5px solid #228B22;"><a href="#">Notifications</a></li>
+        </ul>
+
+        <ul class="menu vertical">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li><a href="#">Messages</a></li>
+            <ul class="nested vertical menu">
+                <li><a href="#">Inbox</a></li>
+                <li><a href="#">Outbox</a></li>
+                <li><a href="#">Spam</a></li>
+                <li><a href="#">Trash</a></li>
+            </ul>
+            <li><a href="#">Notifications</a></li>
+        </ul>
+        <ul class="dropdown menu" data-dropdown-menu style="max-width: 200px;">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Profile</a></li>
+            <li>
+                <a href="#">Messages</a><ul class="menu">
+                    <li><a href="#">Inbox</a></li>
+                    <li><a href="#">Outbox</a></li>
+                    <li><a href="#">Spam</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Notifications</a></li>
+        </ul>
+
+        <ul class="vertical menu" data-accordion-menu>
+            <li>
+                <a href="#">Item 1</a>
+                <ul class="menu vertical nested is-active">
+                    <li>
+                        <a href="#">Item 1A</a>
+                        <ul class="menu vertical nested">
+                            <li><a href="#">Item 1Ai</a></li>
+                            <li><a href="#">Item 1Aii</a></li>
+                            <li><a href="#">Item 1Aiii</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Item 1B</a></li>
+                    <li><a href="#">Item 1C</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Item 2</a>
+                <ul class="menu vertical nested">
+                    <li><a href="#">Item 2A</a></li>
+                    <li><a href="#">Item 2B</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Item 3</a></li>
+        </ul>
+    </div>
+</article>

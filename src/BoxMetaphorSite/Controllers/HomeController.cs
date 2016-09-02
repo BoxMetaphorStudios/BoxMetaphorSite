@@ -20,9 +20,9 @@ namespace BoxMetaphorSite.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult StyleTesting()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Use this space to test Foundation.";
 
             return View();
         }
