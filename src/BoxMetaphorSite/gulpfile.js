@@ -1,4 +1,4 @@
-/// <binding BeforeBuild='clean, min, sass' />
+/// <binding BeforeBuild='clean, min, sass, sass3' />
 var gulp = require("gulp"),
     sass = require("gulp-sass"),
     rimraf = require("rimraf"),

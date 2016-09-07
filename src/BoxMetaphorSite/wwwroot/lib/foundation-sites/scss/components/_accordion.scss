@@ -56,8 +56,8 @@ $accordion-content-padding: 1rem !default;
 @mixin accordion-title {
   display: block;
   padding: $accordion-item-padding;
-  line-height: 1;
-  font-size: rem-calc(12);
+  line-height: .6;
+  font-size: 2rem;
   color: $accordion-item-color;
   position: relative;
   border-bottom: $accordion-content-border;

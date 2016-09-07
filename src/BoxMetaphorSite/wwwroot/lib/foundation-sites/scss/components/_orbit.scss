@@ -61,6 +61,8 @@ $orbit-control-zindex: 10 !default;
   margin: 0;
   overflow: hidden;
   list-style: none;
+  max-width: 100%;
+  height: auto !important;
 }
 
 /// Adds styles for the individual slides of an Orbit slider. These styles are used on the `.orbit-slide` class.

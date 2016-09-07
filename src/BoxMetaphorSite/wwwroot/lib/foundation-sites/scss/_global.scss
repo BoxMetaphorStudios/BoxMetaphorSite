@@ -160,6 +160,9 @@ $-zf-flex-classes-imported: false;
     vertical-align: middle;
   }
 
+  svg {
+      width: 100%;
+  }
   // Make sure textarea takes on height automatically
   textarea {
     height: auto;

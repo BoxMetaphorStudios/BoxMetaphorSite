@@ -394,6 +394,9 @@ img {
   display: inline-block;
   vertical-align: middle; }
 
+svg {
+  width: 100%; }
+
 textarea {
   height: auto;
   min-height: 50px;
@@ -1788,8 +1791,8 @@ select {
 .accordion-title {
   display: block;
   padding: 1.25rem 1rem;
-  line-height: 1;
-  font-size: 0.75rem;
+  line-height: .6;
+  font-size: 2rem;
   color: #2199e8;
   position: relative;
   border-bottom: 1px solid #e6e6e6; }
@@ -2626,7 +2629,9 @@ body {
   position: relative;
   margin: 0;
   overflow: hidden;
-  list-style: none; }
+  list-style: none;
+  max-width: 100%;
+  height: auto !important; }
 
 .orbit-slide {
   width: 100%;
